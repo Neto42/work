@@ -13,7 +13,7 @@ class HomePageView(TemplateView):
         context['work'] = Work.objects.all().count()
         context['ad'] = Ad.objects.all().count()
         context['organization'] = Organization.objects.all().count()
-        context['comments'] = (CommentAd.objects.all().count() + CommentOrganization.objects.all().count() + \
-                              CommentQuestion.objects.all().count() + CommentAnswer.objects.all().count())
+        context['comments'] = (CommentAd.objects.all().count() + CommentOrganization.objects.all().count()
+                               + CommentQuestion.objects.all().count() + CommentAnswer.objects.all().count())
 
         return context
