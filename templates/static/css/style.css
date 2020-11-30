@@ -1,0 +1,26 @@
+/* Base */
+body {
+    background-color: rgba(255,186,87,0.48);
+}
+
+/* HomePage */
+.ul {
+    list-style-type: none;
+    font-size: 30px;
+}
+.ul-im {
+    list-style-image: url(../image/info.svg);
+    font-size: 30px;
+}
+.a {
+    color: black;
+}
+.a:hover {
+    text-decoration: none;
+    color: #ff4722;
+}
+.img {
+    padding-top: 10px;
+    width: 400px;
+    height: 400px;
+}
