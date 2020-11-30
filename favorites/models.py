@@ -18,6 +18,7 @@ class Favorites(models.Model):
     )
 
     class Meta:
+        db_table = 'favorites'
         verbose_name = 'Избранное'
         verbose_name_plural = 'Избранные'
         ordering = ['user']

@@ -13,6 +13,7 @@ class Work(BaseModel):
     )
 
     class Meta:
+        db_table = 'work'
         verbose_name = 'Работа'
         verbose_name_plural = 'Работы'
 
@@ -43,6 +44,7 @@ class Ad(BaseModel):
     salary = models.IntegerField(verbose_name='Заработная плата', default='0')
 
     class Meta:
+        db_table = 'ad'
         verbose_name = 'Объявление'
         verbose_name_plural = 'Объявления'
         ordering = ["organization"]

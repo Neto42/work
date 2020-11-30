@@ -30,6 +30,7 @@ class Organization(BaseModel):
     email = models.EmailField(verbose_name='Почта организации')
 
     class Meta:
+        db_table = 'organization'
         verbose_name = 'Организация'
         verbose_name_plural = 'Организации'
 

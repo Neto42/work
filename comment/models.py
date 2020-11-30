@@ -21,6 +21,7 @@ class CommentAd(BaseModel):
     comment_text = models.TextField(verbose_name='Комментарий')
 
     class Meta:
+        db_table = 'comment_ad'
         verbose_name = 'Комментарий для объявлений'
         verbose_name_plural = 'Комментарии для объявлений'
         ordering = ['ad']
@@ -43,6 +44,7 @@ class CommentOrganization(BaseModel):
     comment_text = models.TextField(verbose_name='Комментарий')
 
     class Meta:
+        db_table = 'comment_organization'
         verbose_name = 'Комментарий для организации'
         verbose_name_plural = 'Комментарии для оорганизаций'
         ordering = ['organization']
@@ -65,6 +67,7 @@ class CommentQuestion(BaseModel):
     comment_text = models.TextField(verbose_name='Комментарий')
 
     class Meta:
+        db_table = 'comment_question'
         verbose_name = 'Комментарий для вопроса'
         verbose_name_plural = 'Комментарии для вопросов'
         ordering = ['quest']
@@ -87,6 +90,7 @@ class CommentAnswer(BaseModel):
     comment_text = models.TextField(verbose_name='Комментарий')
 
     class Meta:
+        db_table = 'comment_answer'
         verbose_name = 'Комментарий для ответа'
         verbose_name_plural = 'Комментарии для ответов'
         ordering = ['answer']

@@ -14,6 +14,7 @@ class Question(BaseModel):
     text = models.TextField(verbose_name='Вопрос')
 
     class Meta:
+        db_table = 'question'
         verbose_name = 'Вопрос'
         verbose_name_plural = 'Вопросы'
         ordering = ['user']
@@ -32,6 +33,7 @@ class Answer(BaseModel):
     text = models.TextField(verbose_name='Ответ')
 
     class Meta:
+        db_table = 'answer'
         verbose_name = 'Ответ'
         verbose_name_plural = 'Ответы'
         ordering = ['user']

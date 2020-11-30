@@ -29,6 +29,7 @@ class Profile(models.Model):
     date_of_birth = models.DateField(verbose_name='Дата рождения', null=True, blank=True)
 
     class Meta:
+        db_table = 'user'
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
         ordering = ["status"]
