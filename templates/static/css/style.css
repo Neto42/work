@@ -1,5 +1,6 @@
 /* Base */
 body {
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
     background-color: rgba(255,186,87,0.48);
 }
 
@@ -11,12 +12,14 @@ body {
 
 address {
     padding-top: 5px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 0;
     background-color: #ffa748;
 }
 
 /* HomePage */
 .ul {
+    font-family: cursive;
     list-style-type: none;
     font-size: 30px;
 }
