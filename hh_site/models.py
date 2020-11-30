@@ -36,7 +36,7 @@ class Ad(BaseModel):
 
     organization = models.ForeignKey(
         Organization,
-        verbose_name='работа',
+        verbose_name='организация',
         on_delete=models.CASCADE
     )
 
