@@ -11,3 +11,4 @@ favorites/migrations
 hh_site/migrations
 organization/migrations
 user/migrations
+comment/migrations
