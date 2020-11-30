@@ -3,6 +3,18 @@ body {
     background-color: rgba(255,186,87,0.48);
 }
 
+#ccopyright {
+    clear: both;
+    text-align: center;
+    padding-top: 170px;
+}
+
+address {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-color: #ffa748;
+}
+
 /* HomePage */
 .ul {
     list-style-type: none;
