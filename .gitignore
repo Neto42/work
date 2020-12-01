@@ -12,3 +12,4 @@ hh_site/migrations
 organization/migrations
 user/migrations
 comment/migrations
+resume/migrations
