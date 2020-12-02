@@ -2,8 +2,8 @@
 
 {% block content %}
     <div class="container">
-        <h2 class="text-center"><strong>Привет, ищешь работу? Тогжа ты попал по адресу!</strong></h2>
-        <div class="row">
+        <h2 class="text-center"><strong>Привет, ищешь работу? Тогда ты попал по адресу!</strong></h2>
+        <div class="row r">
             <div class="col-md-8">
                 <ul class="ul ul-im">
                     <li>Количество работ: {{ work }}</li>
@@ -11,15 +11,13 @@
                     <li>Количество организаций: {{ organization }}</li>
                     <li>Количество комментариев: {{ comments }}</li>
                 </ul>
-                <div>
-                    <ul class="ul">
-                        <li><a class="a" href="#">Посмотреть вакансии</a></li>
-                        <li><a class="a" href="#">Задать вопрос</a></li>
-                    </ul>
+                <div class="block">
+                    <a class="a btn bt btn-success btn-lg" href="#">Посмотреть вакансии</a>
+                    <a class="a btn bt btn-success btn-lg" href="#">Задать вопрос</a>
                 </div>
             </div>
             <div class="col-md-4">
-                <p><img class="img" src="../../static/image/1.jpg"></p>
+                <p><img class="img bt" src="../../static/image/1.jpg"></p>
             </div>
         </div>
     </div>

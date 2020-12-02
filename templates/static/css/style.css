@@ -18,8 +18,15 @@ address {
 }
 
 /* HomePage */
+.bt {
+    box-shadow: 4px 4px 10px black;
+}
+
+.block {
+    display: inline-block;
+}
+
 .ul {
-    font-family: cursive;
     list-style-type: none;
     font-size: 30px;
 }
@@ -27,15 +34,19 @@ address {
     list-style-image: url(../image/info.svg);
     font-size: 30px;
 }
+
 .a {
+    margin-top: 20px;
+    margin-left: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
     color: black;
 }
 .a:hover {
     text-decoration: none;
-    color: #ff4722;
+    color: #000000;
 }
 .img {
-    padding-top: 10px;
     width: 400px;
     height: 400px;
 }
