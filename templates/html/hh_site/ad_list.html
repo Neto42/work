@@ -1,0 +1,23 @@
+{% extends 'html/base/base.html' %}
+
+{% block content %}
+    <h2 class="text-center"><strong>Вакансии:</strong></h2>
+    <table class="table table-striped">
+        <tr>
+            <td>Номер</td>
+            <td>Работа</td>
+            <td>Организация</td>
+            <td>Зарплата</td>
+            <td>Описание</td>
+        </tr>
+        {% for ad in ads %}
+            <tr>
+                <td class="active">{{ ad.pk }}</td>
+                <td class="success">{{ ad.work }}</td>
+                <td class="warning">{{ ad.organization }}</td>
+                <td class="danger">{{ ad.salary }}</td>
+                <td class="info">{{ ad.ad_text }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
