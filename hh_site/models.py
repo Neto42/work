@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from base.models import BaseModel
 from organization.models import Organization
@@ -18,6 +19,7 @@ class Work(BaseModel):
         db_table = 'work'
         verbose_name = 'Работа'
         verbose_name_plural = 'Работы'
+        ordering = ['work']
 
     def __str__(self):
         return f"{self.work}"
@@ -53,3 +55,6 @@ class Ad(BaseModel):
 
     def __str__(self):
         return f"{str(self.organization)}"
+
+    def get_absolute_url(self):
+        return reverse('ad-detail', args=[str(self.id)])

@@ -46,3 +46,19 @@ address {
 }
 
 /* Ad */
+.ad {
+    color: black;
+}
+
+.ad:hover {
+    text-decoration: none;
+    color: blue;
+}
+
+/* Ad detail */
+.border-ad {
+    background-color: #ffc82f;
+    border: 1px solid black;
+    padding: 10px;
+    box-shadow: 4px 4px 10px black;
+}

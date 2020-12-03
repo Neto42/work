@@ -1,0 +1,19 @@
+{% extends 'html/base/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="text-center"><strong>{{ ad.work }}:</strong></h2>
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="ul ul-im">
+                    <li><a class="ad" href="#">Организация</a>: {{ ad.organization }}</li>
+                    <li>Зарплата: {{ ad.salary }}</li>
+                    <li>Описание работы: <p>{{ ad.ad_text }}</p></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <p><img src="{{ ad.organization.image }}">тут фотка, пока не работает</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

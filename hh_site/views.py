@@ -1,4 +1,5 @@
-from django.views.generic import TemplateView, ListView
+from django.shortcuts import get_object_or_404
+from django.views.generic import TemplateView, ListView, DetailView
 
 from hh_site.models import Work, Ad
 from organization.models import Organization
@@ -20,12 +21,16 @@ class HomePageView(TemplateView):
 
 
 class AdListView(ListView):
-    model = Work
+    model = Ad
     template_name = "html/hh_site/ad_list.html"
     paginate_by = 10
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['ads'] = Ad.objects.all()
+    def get_queryset(self):
+        return Ad.objects.order_by('work', 'organization')[:self.paginate_by]
 
-        return context
+
+
+class AdDetailView(DetailView):
+    model = Ad
+    template_name = "html/hh_site/ad_detail.html"
+
