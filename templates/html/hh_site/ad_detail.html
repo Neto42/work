@@ -3,12 +3,25 @@
 {% block content %}
     <div class="container">
         <h2 class="text-center"><strong>{{ ad.work }}:</strong></h2>
-        <div class="row">
+        <div>
+            <a class="ad btn bt btn-success btn-sm bt-1" href="#">Изменить</a>
+        </div>
+        <div class="row rer">
             <div class="col-md-8">
                 <ul class="ul ul-im">
-                    <li><a class="ad" href="#">Организация</a>: {{ ad.organization }}</li>
+                    <li>Организация: {{ ad.organization }}
+                        <ul class="ul-ad">
+                            <li>ИНН: {{ ad.organization.inn }}</li>
+                            <li>КПП: {{ ad.organization.kpp }}</li>
+                            <li>ОГРН: {{ ad.organization.ogrn }}</li>
+                            <li>Почта: {{ ad.organization.email }}</li>
+                            {% if ad.organization.link != None %}
+                                <li>Ссылка на сайт организации: {{ ad.organization.link }}</li>
+                            {% endif %}
+                        </ul>
+                    </li>
                     <li>Зарплата: {{ ad.salary }}</li>
-                    <li>Описание работы: <p>{{ ad.ad_text }}</p></li>
+                    <li>Описание работы: <p class="p">{{ ad.ad_text }}</p></li>
                 </ul>
             </div>
             <div class="col-md-4">

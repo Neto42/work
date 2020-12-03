@@ -1,8 +1,12 @@
 {% extends 'html/base/base.html' %}
 
 {% block content %}
-    <h2 class="text-center"><strong>Вакансии:</strong></h2>
     <div class="container">
+        <h2 class="text-center"><strong>Вакансии:</strong></h2>
+        <div>
+            <a class="ad btn bt btn-success btn-sm bt-1" href="#">Удалить</a>
+            <a class="ad btn bt btn-success btn-sm bt-1" href="#">Добавить</a>
+        </div>
         <table class="table table-striped">
             <tr>
                 <td>Работа</td>
@@ -12,8 +16,8 @@
             </tr>
             {% for ad in ad_list %}
                 <tr>
-                    <td><a class="ad" href="#">{{ ad.work }}</a></td>
-                    <td><a class="ad" href="#">{{ ad.organization }}</a></td>
+                    <td>{{ ad.work }}</td>
+                    <td>{{ ad.organization }}</td>
                     <td>{{ ad.salary }}</td>
                     <td><a class="ad btn bt btn-success btn-sm" href="{% url 'ad-detail' ad.pk %}">посмотреть</a></td>
                 </tr>

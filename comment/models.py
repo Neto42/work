@@ -7,52 +7,6 @@ from organization.models import Organization
 from user.models import Profile
 
 
-class CommentAd(BaseModel):
-    ad = models.ForeignKey(
-        Ad,
-        verbose_name='Объявление',
-        on_delete=models.CASCADE
-    )
-    user = models.ForeignKey(
-        Profile,
-        verbose_name='Пользователь',
-        on_delete=models.CASCADE
-    )
-    comment_text = models.TextField(verbose_name='Комментарий')
-
-    class Meta:
-        db_table = 'comment_ad'
-        verbose_name = 'Комментарий для объявлений'
-        verbose_name_plural = 'Комментарии для объявлений'
-        ordering = ['ad']
-
-    def __str__(self):
-        return f"{self.ad}: {self.user}"
-
-
-class CommentOrganization(BaseModel):
-    organization = models.ForeignKey(
-        Organization,
-        verbose_name='Организация',
-        on_delete=models.CASCADE
-    )
-    user = models.ForeignKey(
-        Profile,
-        verbose_name='Пользователь',
-        on_delete=models.CASCADE
-    )
-    comment_text = models.TextField(verbose_name='Комментарий')
-
-    class Meta:
-        db_table = 'comment_organization'
-        verbose_name = 'Комментарий для организации'
-        verbose_name_plural = 'Комментарии для оорганизаций'
-        ordering = ['organization']
-
-    def __str__(self):
-        return f"{self.organization}: {self.user}"
-
-
 class CommentQuestion(BaseModel):
     quest = models.ForeignKey(
         Question,

@@ -56,9 +56,23 @@ address {
 }
 
 /* Ad detail */
-.border-ad {
-    background-color: #ffc82f;
-    border: 1px solid black;
-    padding: 10px;
-    box-shadow: 4px 4px 10px black;
+.bt-1 {
+    margin-bottom: 20px;
+    margin-right: 10px;
+    float: right;
+}
+
+.ul-ad {
+    list-style-type: none;
+    list-style-image: none;
+    font-size: 20px;
+}
+
+.p {
+    padding-left: 40px;
+    font-size: 20px;
+}
+
+.rer {
+    padding-top: 50px;
 }

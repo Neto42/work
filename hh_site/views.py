@@ -3,7 +3,7 @@ from django.views.generic import TemplateView, ListView, DetailView
 
 from hh_site.models import Work, Ad
 from organization.models import Organization
-from comment.models import CommentAd, CommentAnswer, CommentOrganization, CommentQuestion
+from comment.models import CommentAnswer, CommentQuestion
 
 
 class HomePageView(TemplateView):
@@ -14,8 +14,7 @@ class HomePageView(TemplateView):
         context['work'] = Work.objects.all().count()
         context['ad'] = Ad.objects.all().count()
         context['organization'] = Organization.objects.all().count()
-        context['comments'] = (CommentAd.objects.all().count() + CommentOrganization.objects.all().count()
-                               + CommentQuestion.objects.all().count() + CommentAnswer.objects.all().count())
+        context['comments'] = (CommentQuestion.objects.all().count() + CommentAnswer.objects.all().count())
 
         return context
 
@@ -29,8 +28,6 @@ class AdListView(ListView):
         return Ad.objects.order_by('work', 'organization')[:self.paginate_by]
 
 
-
 class AdDetailView(DetailView):
     model = Ad
     template_name = "html/hh_site/ad_detail.html"
-

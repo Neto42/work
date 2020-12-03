@@ -13,8 +13,6 @@ class Work(BaseModel):
         unique=True
     )
 
-    ad_work = models.TextField(verbose_name='описание')
-
     class Meta:
         db_table = 'work'
         verbose_name = 'Работа'
