@@ -1,0 +1,31 @@
+{% extends 'html/base/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="text-center"><strong>Вопросы:</strong></h2>
+        <div>
+            <a class="ad btn bt btn-success btn-sm bt-1" href="#">Удалить</a>
+            <a class="ad btn bt btn-success btn-sm bt-1" href="#">Добавить</a>
+        </div>
+        <div class="rt">
+            {% if question_list %}
+                {% for question in question_list %}
+                    <details class="details">
+                        <summary class="sum">
+                            {{ question.text }}, (вопрос от {{ question.user }})
+                        </summary>
+                        {% if question.answer %}
+                            <p class="p">{{ question.answer.text }}, (ответ от
+                            {{ question.answer.user }})</p>
+                        {% else %}
+                            <p>На этот вопрос пока нет ответа</p>
+                        {% endif %}
+{#                        <a class="a_link" href="{{ question.get_absolute_url }}">Комментарии</a>#}
+                    </details>
+                {% endfor %}
+            {% else %}
+                <p>На сайте нет вопрсов(</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

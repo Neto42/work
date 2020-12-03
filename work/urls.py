@@ -6,5 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(url='/fwork/', permanent=True)),
     path('fwork/', include('hh_site.urls')),
-    # path('organization/', include('organization.urls')),
+    path('faq/', include('faq.urls')),
 ]

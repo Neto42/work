@@ -29,6 +29,12 @@ class Answer(BaseModel):
         verbose_name='Пользователь',
         on_delete=models.CASCADE
     )
+    quest = models.OneToOneField(
+        Question,
+        verbose_name='Вопрос',
+        on_delete=models.CASCADE
+    )
+
     theme = models.CharField(verbose_name='Тема', max_length=50)
     text = models.TextField(verbose_name='Ответ')
 

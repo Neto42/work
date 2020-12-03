@@ -1,0 +1,40 @@
+/* Quest */
+.rt {
+    margin-top: 50px;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] p {
+  animation: spoiler 1s;
+}
+
+@keyframes spoiler {
+  0%   {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.details {
+    margin: 5px;
+    padding: 5px;
+
+    background-color: #ff9e44;
+    border: 2px solid black;
+}
+
+.sum {
+    border-bottom: 1px solid black;
+}
+
+.a_link {
+    color: #702828;
+    text-decoration: none;
+
+    transition: color .1s linear;
+}
+
+.a_link:hover {
+    color: blue;
+}
