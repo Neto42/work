@@ -21,13 +21,6 @@ class QuestCreateView(CreateView):
     success_url = reverse_lazy('quest-list')
 
 
-# class AdUpdateView(UpdateView):
-#     model = Ad
-#     form_class = AdForm
-#     template_name = 'html/hh_site/ad_update.html'
-#     success_url = reverse_lazy('ad-list')
-
-
 class QuestDeleteView(DeleteView):
     model = Question
     form_class = QuestForm

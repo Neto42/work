@@ -11,7 +11,7 @@
                 {% for question in question_list %}
                     <details class="details">
                         <summary class="sum">
-                            {{ question.text }}, (вопрос от {{ question.user }})
+                            <p>{{ question.text }}, (вопрос от {{ question.user }})</p>
                             <a class="ad btn bt btn-success btn-sm" href="{% url 'quest-delete' pk=question.pk %}">
                                 Удалить</a>
                         </summary>
@@ -21,8 +21,8 @@
                             <a class="ad btn bt btn-success btn-sm" href="{% url 'answer-delete' pk=question.answer.pk %}">
                                 Удалить</a>
                         {% else %}
+                            <p class="p">На этот вопрос пока нет ответа</p>
                             <a class="ad btn bt btn-success btn-sm" href="{% url 'ans-new' %}">Добавить</a>
-                            <p>На этот вопрос пока нет ответа</p>
                         {% endif %}
 {#                        <a class="a_link" href="{{ question.get_absolute_url }}">Комментарии</a>#}
                     </details>
