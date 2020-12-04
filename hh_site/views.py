@@ -1,6 +1,7 @@
-from django.shortcuts import get_object_or_404
-from django.views.generic import TemplateView, ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 
+from hh_site.forms import AdForm
 from hh_site.models import Work, Ad
 from organization.models import Organization
 from comment.models import CommentAnswer, CommentQuestion
@@ -31,3 +32,23 @@ class AdListView(ListView):
 class AdDetailView(DetailView):
     model = Ad
     template_name = "html/hh_site/ad_detail.html"
+
+
+class AdCreateView(CreateView):
+    form_class = AdForm
+    template_name = 'html/hh_site/ad_new.html'
+    success_url = reverse_lazy('ad-list')
+
+
+class AdUpdateView(UpdateView):
+    model = Ad
+    form_class = AdForm
+    template_name = 'html/hh_site/ad_update.html'
+    success_url = reverse_lazy('ad-list')
+
+
+class AdDeleteView(DeleteView):
+    model = Ad
+    form_class = AdForm
+    template_name = 'html/hh_site/ad_delete.html'
+    success_url = reverse_lazy('ad-list')

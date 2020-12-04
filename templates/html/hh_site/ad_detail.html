@@ -4,7 +4,8 @@
     <div class="container">
         <h2 class="text-center"><strong>{{ ad.work }}:</strong></h2>
         <div>
-            <a class="ad btn bt btn-success btn-sm bt-1" href="#">Изменить</a>
+            <a class="ad btn bt btn-success btn-sm bt-1" href="{% url 'ad-delete' pk=ad.pk %}">Удалить</a>
+            <a class="ad btn bt btn-success btn-sm bt-1" href="{% url 'ad-update' pk=ad.pk %}">Изменить</a>
         </div>
         <div class="row rer">
             <div class="col-md-8">
