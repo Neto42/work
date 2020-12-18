@@ -27,7 +27,7 @@ class Ad(BaseModel):
     user = models.ForeignKey(
         Profile,
         verbose_name='пользователь',
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
     )
 
     work = models.ForeignKey(
