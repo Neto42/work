@@ -1,0 +1,33 @@
+{% extends 'html/base/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="text-center"><strong>Вакансии:</strong></h2>
+        {% if user.is_superuser %}
+        <div>
+            <a class="ad btn bt btn-success btn-sm bt-1" href="{% url 'org-new' %}">Добавить</a>
+        </div>
+        {% endif %}
+        <table class="table table-striped">
+            <tr>
+                <td></td>
+                <td>Работа</td>
+                <td>ИНН</td>
+                <td>КПП</td>
+                <td>ОГРН</td>
+                <td>Почта</td>
+                <td></td>
+            </tr>
+            {% for org in organization_list %}
+                <tr>
+                    <td>{{ org.id }}</td>
+                    <td>{{ org.organization }}</td>
+                    <td>{{ org.inn }}</td>
+                    <td>{{ org.kpp }}</td>
+                    <td>{{ org.ogrn }}</td>
+                    <td>{{ org.email }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
