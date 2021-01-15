@@ -6,10 +6,10 @@ from faq.models import Question, Answer
 class QuestForm(ModelForm):
     class Meta:
         model = Question
-        fields = '__all__'
+        fields = ('theme', 'text')
 
 
 class AnsForm(ModelForm):
     class Meta:
         model = Answer
-        fields = '__all__'
+        fields = ('quest', 'theme', 'text')

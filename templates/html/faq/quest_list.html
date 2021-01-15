@@ -3,10 +3,12 @@
 {% block content %}
     <div class="container">
         <h2 class="text-center"><strong>Вопросы:</strong></h2>
+        {% if user.is_active %}
         <div>
             <a class="ad btn bt btn-success btn-sm bt-1" href="{% url 'quest-new' %}">Добавить</a>
         </div>
-        <div class="rt">
+        {% endif %}
+                <div class="rt">
             {% if question_list %}
                 {% for question in question_list %}
                     <details class="details">

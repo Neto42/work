@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import request
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DeleteView, CreateView
 
 from faq.forms import QuestForm, AnsForm
 from faq.models import Question, Answer
+from user.models import Profile
 
 
 class QuestionListView(ListView):
@@ -21,6 +24,10 @@ class QuestCreateView(CreateView):
     template_name = 'html/faq/quest_new.html'
     success_url = reverse_lazy('quest-list')
 
+    def form_valid(self, form):
+        form.instance.user = Profile.objects.get(user=self.request.user)
+        return super().form_valid(form)
+
 
 class QuestDeleteView(DeleteView):
     model = Question
@@ -31,8 +38,13 @@ class QuestDeleteView(DeleteView):
 
 class AnswerCreateView(CreateView):
     form_class = AnsForm
+    model = Answer
     template_name = 'html/faq/ans_new.html'
     success_url = reverse_lazy('quest-list')
+
+    def form_valid(self, form):
+        form.instance.user = Profile.objects.get(user=self.request.user)
+        return super().form_valid(form)
 
 
 class AnswerDeleteView(DeleteView):

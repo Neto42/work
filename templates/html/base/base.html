@@ -29,6 +29,8 @@
             {% endif %}
     </div>
 
+    {% if user.is_authenticated %}
+    {% endif %}
     {% block content %}{% endblock %}
 </body>
 </html>
