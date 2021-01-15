@@ -1,3 +1,4 @@
+from django.core.validators import RegexValidator
 from django.db import models
 
 from base.models import BaseModel
@@ -9,19 +10,25 @@ class Organization(BaseModel):
         max_length=50,
     )
 
-    inn = models.BigIntegerField(
+    inn = models.CharField(
+        max_length=9,
         verbose_name='ИНН',
         unique=True,
+        validators=[RegexValidator(regex='^[0-9]{9}$', message='Введите корректный ИНН', code='nomatch')]
     )
 
-    kpp = models.IntegerField(
+    kpp = models.CharField(
+        max_length=11,
         verbose_name='КПП',
         unique=True,
+        validators=[RegexValidator(regex='^[0-9]{11}$', message='Введите корректный КПП', code='nomatch')]
     )
 
-    ogrn = models.BigIntegerField(
+    ogrn = models.CharField(
+        max_length=10,
         verbose_name='ОГРН',
         unique=True,
+        validators=[RegexValidator(regex='^[0-9]{10}$', message='Введите корректный ОГРН', code='nomatch')]
     )
 
     image = models.ImageField(verbose_name='Логотип организации', null=True, blank=True)
