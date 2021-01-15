@@ -16,7 +16,7 @@
                     <a class="a btn bt btn-success btn-lg" href="{% url 'quest-new' %}">Задать вопрос</a>
                     {% if user.is_superuser %}
                         <a class="a btn bt btn-success btn-lg" href="{% url 'org-new' %}">Добавить организацию</a>
-                        <a class="a btn bt btn-success btn-lg" href="{% url 'work-new' %}">Добавить работу</a>
+                        <a class="a btn bt btn-success btn-lg" href="{% url 'work-list' %}">Посмотреть работу</a>
                     {% endif %}
                 </div>
             </div>

@@ -62,4 +62,13 @@ class AdDeleteView(DeleteView):
 class WorkCreateView(CreateView):
     form_class = WorkForm
     template_name = 'html/hh_site/work-new.html'
-    success_url = reverse_lazy('fwork')
+    success_url = reverse_lazy('work-list')
+
+
+class WorkListView(ListView):
+    model = Work
+    template_name = "html/hh_site/work_list.html"
+    paginate_by = 10
+
+    def get_queryset(self):
+        return Work.objects.order_by('work',)[:self.paginate_by]

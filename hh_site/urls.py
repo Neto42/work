@@ -8,5 +8,6 @@ urlpatterns = [
     re_path(r'^ad/new/$', AdCreateView.as_view(), name='ad-new'),
     re_path(r'^ad/update/(?P<pk>\d+)$', AdUpdateView.as_view(), name='ad-update'),
     re_path(r'^ad/delete/(?P<pk>\d+)$', AdDeleteView.as_view(), name='ad-delete'),
-    re_path(r'^work/new/$', WorkCreateView.as_view(), name='work-new'),
+    re_path(r'works$', WorkListView.as_view(), name='work-list'),
+    re_path(r'works/new/$', WorkCreateView.as_view(), name='work-new'),
 ]
