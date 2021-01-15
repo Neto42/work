@@ -1,9 +1,15 @@
 from django.forms import ModelForm
 
-from hh_site.models import Ad
+from hh_site.models import Ad, Work
 
 
 class AdForm(ModelForm):
     class Meta:
         model = Ad
-        fields = '__all__'
+        fields = ('work', 'organization', 'ad_text', 'salary')
+
+
+class WorkForm(ModelForm):
+    class Meta:
+        model = Work
+        fields = ('work',)

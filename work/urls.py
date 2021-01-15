@@ -9,5 +9,6 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/fwork/', permanent=True)),
     path('fwork/', include('hh_site.urls')),
     path('faq/', include('faq.urls')),
+    path('org/', include('organization.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

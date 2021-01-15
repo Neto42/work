@@ -2,9 +2,10 @@ from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from comment.models import CommentAnswer, CommentQuestion
-from hh_site.forms import AdForm
+from hh_site.forms import AdForm, WorkForm
 from hh_site.models import Work, Ad
 from organization.models import Organization
+from user.models import Profile
 
 
 class HomePageView(TemplateView):
@@ -39,6 +40,10 @@ class AdCreateView(CreateView):
     template_name = 'html/hh_site/ad_new.html'
     success_url = reverse_lazy('ad-list')
 
+    def form_valid(self, form):
+        form.instance.user = Profile.objects.get(user=self.request.user)
+        return super().form_valid(form)
+
 
 class AdUpdateView(UpdateView):
     model = Ad
@@ -52,3 +57,9 @@ class AdDeleteView(DeleteView):
     form_class = AdForm
     template_name = 'html/hh_site/ad_delete.html'
     success_url = reverse_lazy('ad-list')
+
+
+class WorkCreateView(CreateView):
+    form_class = WorkForm
+    template_name = 'html/hh_site/work-new.html'
+    success_url = reverse_lazy('fwork')
