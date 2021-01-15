@@ -12,17 +12,23 @@
                     <details class="details">
                         <summary class="sum">
                             <p>{{ question.text }}, (вопрос от {{ question.user }})</p>
-                            <a class="ad btn bt btn-success btn-sm" href="{% url 'quest-delete' pk=question.pk %}">
-                                Удалить</a>
+                            {% if user.is_superuser %}
+                                <a class="ad btn bt btn-success btn-sm" href="{% url 'quest-delete' pk=question.pk %}">
+                                    Удалить</a>
+                            {% endif %}
                         </summary>
                         {% if question.answer %}
                             <p class="p">{{ question.answer.text }}, (ответ от
                             {{ question.answer.user }})</p>
-                            <a class="ad btn bt btn-success btn-sm" href="{% url 'answer-delete' pk=question.answer.pk %}">
-                                Удалить</a>
+                            {% if user.is_superuser %}
+                                <a class="ad btn bt btn-success btn-sm" href="{% url 'answer-delete' pk=question.answer.pk %}">
+                                    Удалить</a>
+                            {% endif %}
                         {% else %}
                             <p class="p">На этот вопрос пока нет ответа</p>
-                            <a class="ad btn bt btn-success btn-sm" href="{% url 'ans-new' %}">Добавить</a>
+                            {% if user.is_superuser %}
+                                <a class="ad btn bt btn-success btn-sm" href="{% url 'ans-new' %}">Добавить</a>
+                            {% endif %}
                         {% endif %}
 {#                        <a class="a_link" href="{{ question.get_absolute_url }}">Комментарии</a>#}
                     </details>

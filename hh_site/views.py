@@ -1,10 +1,10 @@
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 
+from comment.models import CommentAnswer, CommentQuestion
 from hh_site.forms import AdForm
 from hh_site.models import Work, Ad
 from organization.models import Organization
-from comment.models import CommentAnswer, CommentQuestion
 
 
 class HomePageView(TemplateView):

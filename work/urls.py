@@ -7,4 +7,5 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/fwork/', permanent=True)),
     path('fwork/', include('hh_site.urls')),
     path('faq/', include('faq.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

@@ -16,6 +16,7 @@ class QuestionListView(ListView):
 
 
 class QuestCreateView(CreateView):
+    model = Question
     form_class = QuestForm
     template_name = 'html/faq/quest_new.html'
     success_url = reverse_lazy('quest-list')
