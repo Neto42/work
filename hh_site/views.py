@@ -76,3 +76,17 @@ class WorkListView(ListView):
 
     def get_queryset(self):
         return Work.objects.order_by('work',)[:self.paginate_by]
+
+
+class WorkUpdateView(UpdateView):
+    model = Work
+    form_class = WorkForm
+    template_name = 'html/hh_site/work_update.html'
+    success_url = reverse_lazy('work-list')
+
+
+class WorkDeleteView(DeleteView):
+    model = Work
+    form_class = WorkForm
+    template_name = 'html/hh_site/work_delete.html'
+    success_url = reverse_lazy('work-list')

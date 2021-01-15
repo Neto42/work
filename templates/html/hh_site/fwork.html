@@ -15,7 +15,9 @@
                     <a class="a btn bt btn-success btn-lg" href="{% url 'ad-list' %}">Посмотреть вакансии</a>
                     <a class="a btn bt btn-success btn-lg" href="{% url 'work-list' %}">Посмотреть работу</a>
                     <a class="a btn bt btn-success btn-lg" href="{% url 'org-list' %}">Посмотреть организацию</a>
-                    <a class="a btn bt btn-success btn-lg" href="{% url 'quest-new' %}">Задать вопрос</a>
+                    {% if user.is_authenticated %}
+                        <a class="a btn bt btn-success btn-lg" href="{% url 'quest-new' %}">Задать вопрос</a>
+                    {% endif %}
                 </div>
             </div>
             <div class="col-md-4">

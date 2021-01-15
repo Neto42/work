@@ -29,7 +29,6 @@ INSTALLED_APPS = [
     'user',
     'faq',
     'comment',
-    'favorites',
     'hh_site',
     'organization',
 ]
@@ -72,7 +71,7 @@ WSGI_APPLICATION = 'work.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'work',
+        'NAME': 'work2',
         'USER': 'postgres',
         'PASSWORD': '12345',
         'HOST': 'localhost',

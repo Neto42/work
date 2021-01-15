@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="container">
-        <h2 class="text-center"><strong>Вакансии:</strong></h2>
+        <h2 class="text-center"><strong>Организация:</strong></h2>
         {% if user.is_superuser %}
         <div>
             <a class="ad btn bt btn-success btn-sm bt-1" href="{% url 'org-new' %}">Добавить</a>
@@ -17,6 +17,7 @@
                 <td>ОГРН</td>
                 <td>Почта</td>
                 <td></td>
+                <td></td>
             </tr>
             {% for org in organization_list %}
                 <tr>
@@ -26,6 +27,8 @@
                     <td>{{ org.kpp }}</td>
                     <td>{{ org.ogrn }}</td>
                     <td>{{ org.email }}</td>
+                    <td><a class="ad btn bt btn-success btn-sm" href="{% url 'org-delete' org.pk %}">удалить</a></td>
+                    <td><a class="ad btn bt btn-success btn-sm" href="{% url 'org-update' org.pk %}">изменить</a></td>
                 </tr>
             {% endfor %}
         </table>

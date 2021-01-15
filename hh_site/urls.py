@@ -11,4 +11,6 @@ urlpatterns = [
     re_path(r'^ad/delete/(?P<pk>\d+)$', AdDeleteView.as_view(), name='ad-delete'),
     re_path(r'works$', WorkListView.as_view(), name='work-list'),
     re_path(r'works/new/$', WorkCreateView.as_view(), name='work-new'),
+    re_path(r'^works/update/(?P<pk>\d+)$', WorkUpdateView.as_view(), name='work-update'),
+    re_path(r'^works/delete/(?P<pk>\d+)$', WorkDeleteView.as_view(), name='work-delete'),
 ]

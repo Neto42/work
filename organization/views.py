@@ -11,6 +11,20 @@ class OrgCreateView(CreateView):
     success_url = reverse_lazy('org-list')
 
 
+class OrgDeleteView(DeleteView):
+    form_class = OrgForm
+    model = Organization
+    template_name = 'html/hh_site/org-delete.html'
+    success_url = reverse_lazy('org-list')
+
+
+class OrgUpdateView(UpdateView):
+    form_class = OrgForm
+    model = Organization
+    template_name = 'html/hh_site/org_update.html'
+    success_url = reverse_lazy('org-list')
+
+
 class OrgListView(ListView):
     model = Organization
     template_name = "html/hh_site/org_list.html"

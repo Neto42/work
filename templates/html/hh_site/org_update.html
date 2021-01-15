@@ -1,11 +1,12 @@
 {% extends 'html/base/base.html' %}
 
 {% block content %}
-    <div class="container cen">
-        <h1>Объявление</h1>
+    <div class="container">
+        <h1>Организация</h1>
         <form method="post">
             {% csrf_token %}
-            <input type="submit" value="Удалить">
+            {{ form.as_p }}
+            <input type="submit" value="Изменить">
         </form>
     </div>
 {% endblock %}

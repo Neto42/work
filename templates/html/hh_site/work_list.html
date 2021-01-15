@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="container">
-        <h2 class="text-center"><strong>Вакансии:</strong></h2>
+        <h2 class="text-center"><strong>Работа:</strong></h2>
         {% if user.is_superuser %}
         <div>
             <a class="ad btn bt btn-success btn-sm bt-1" href="{% url 'work-new' %}">Добавить</a>
@@ -12,11 +12,15 @@
             <tr>
                 <td></td>
                 <td>Работа</td>
+                <td></td>
+                <td></td>
             </tr>
             {% for work in work_list %}
                 <tr>
                     <td>{{ work.id }}</td>
                     <td>{{ work.work }}</td>
+                    <td><a class="ad btn bt btn-success btn-sm" href="{% url 'work-delete' work.pk %}">удалить</a></td>
+                    <td><a class="ad btn bt btn-success btn-sm" href="{% url 'work-update' work.pk %}">изменить</a></td>
                 </tr>
             {% endfor %}
         </table>
