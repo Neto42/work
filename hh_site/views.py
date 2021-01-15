@@ -21,6 +21,10 @@ class HomePageView(TemplateView):
         return context
 
 
+class WePageView(TemplateView):
+    template_name = "html/my/my.html"
+
+
 class AdListView(ListView):
     model = Ad
     template_name = "html/hh_site/ad_list.html"

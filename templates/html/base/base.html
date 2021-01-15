@@ -18,8 +18,7 @@
             <nav class="my-2 my-md-0 mr-md-3">
                 <a class="p-2 text-dark" href="{% url 'ad-list' %}">Объявления</a>
                 <a class="p-2 text-dark" href="{% url 'quest-list' %}">Вопросы</a>
-                <a class="p-2 text-dark" href="#">О нас</a>
-                <a class="p-2 text-dark" href="#">Контакты</a>
+                <a class="p-2 text-dark" href="{% url 'my' %}">О нас</a>
             </nav>
             {% if user.is_authenticated %}
                 <span class="p-2">Пользователь: {{ user.get_username }}</span>

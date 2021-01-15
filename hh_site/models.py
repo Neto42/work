@@ -1,3 +1,4 @@
+from django.core.validators import RegexValidator
 from django.db import models
 from django.urls import reverse
 
@@ -43,7 +44,16 @@ class Ad(BaseModel):
     )
 
     ad_text = models.TextField(verbose_name='Текст объявления')
-    salary = models.IntegerField(verbose_name='Заработная плата', default='0')
+    salary = models.CharField(
+        verbose_name='Заработная плата',
+        max_length=9,
+        default='0',
+        validators=[
+            RegexValidator(
+                regex='^[0-9]{9}',
+                message='Введите корректную зарплату',
+                code='nomatch')]
+    )
 
     class Meta:
         db_table = 'ad'
