@@ -31,7 +31,7 @@ class Organization(BaseModel):
         validators=[RegexValidator(regex='^[0-9]{10}$', message='Введите корректный ОГРН', code='nomatch')]
     )
 
-    image = models.ImageField(verbose_name='Логотип организации', null=True, blank=True)
+    image = models.ImageField(verbose_name='Логотип организации', null=True, blank=True, upload_to='images/')
     text_org = models.TextField(verbose_name='Описание организации')
     link = models.CharField(verbose_name='Ссылка на сайт организации', max_length=50, null=True, blank=True)
     email = models.EmailField(verbose_name='Почта организации')

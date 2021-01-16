@@ -50,7 +50,7 @@ class Ad(BaseModel):
         default='0',
         validators=[
             RegexValidator(
-                regex='^[0-9]{9}',
+                regex='^[0-9]',
                 message='Введите корректную зарплату',
                 code='nomatch')]
     )
