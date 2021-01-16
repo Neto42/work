@@ -28,7 +28,7 @@ class OrgUpdateView(UpdateView):
 class OrgListView(ListView):
     model = Organization
     template_name = "html/hh_site/org_list.html"
-    paginate_by = 10
+    paginate_by = 5
 
     def get_queryset(self):
-        return Organization.objects.order_by('organization')[:self.paginate_by]
+        return Organization.objects.order_by('organization')

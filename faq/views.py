@@ -12,10 +12,10 @@ from user.models import Profile
 class QuestionListView(ListView):
     model = Question
     template_name = "html/faq/quest_list.html"
-    paginate_by = 10
+    paginate_by = 5
 
     def get_queryset(self):
-        return Question.objects.order_by('theme', 'id')[:self.paginate_by]
+        return Question.objects.order_by('theme', 'id')
 
 
 class QuestCreateView(CreateView):

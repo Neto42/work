@@ -1,7 +1,6 @@
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from comment.models import CommentAnswer, CommentQuestion
 from hh_site.forms import AdForm, WorkForm
 from hh_site.models import Work, Ad
 from organization.models import Organization
@@ -16,7 +15,6 @@ class HomePageView(TemplateView):
         context['work'] = Work.objects.all().count()
         context['ad'] = Ad.objects.all().count()
         context['organization'] = Organization.objects.all().count()
-        context['comments'] = (CommentQuestion.objects.all().count() + CommentAnswer.objects.all().count())
 
         return context
 
@@ -28,10 +26,10 @@ class WePageView(TemplateView):
 class AdListView(ListView):
     model = Ad
     template_name = "html/hh_site/ad_list.html"
-    paginate_by = 10
+    paginate_by = 5
 
     def get_queryset(self):
-        return Ad.objects.order_by('work', 'organization')[:self.paginate_by]
+        return Ad.objects.order_by('work', 'organization')
 
 
 class AdDetailView(DetailView):
@@ -72,10 +70,10 @@ class WorkCreateView(CreateView):
 class WorkListView(ListView):
     model = Work
     template_name = "html/hh_site/work_list.html"
-    paginate_by = 10
+    paginate_by = 5
 
     def get_queryset(self):
-        return Work.objects.order_by('work',)[:self.paginate_by]
+        return Work.objects.order_by('work',)
 
 
 class WorkUpdateView(UpdateView):

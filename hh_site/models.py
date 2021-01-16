@@ -10,7 +10,7 @@ from user.models import Profile
 class Work(BaseModel):
     work = models.CharField(
         verbose_name='работа',
-        max_length=20,
+        max_length=30,
         unique=True
     )
 
